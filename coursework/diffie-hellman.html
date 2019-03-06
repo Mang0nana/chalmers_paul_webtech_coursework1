@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" text="text/css" href="index.css">
+	<script src="diffie_hellman.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8"/>
+	<title>Diffie-Hellman</title>
+</head>
+<body>
+<header>
+	<nav class="top-nav">
+		<a href="index.html">Home</a>
+		<a href="caesar.html">Caesar Cipher</a>
+		<a href="caesar_origin.html">Caesar Origin</a>
+		<a class="active" href="Diffie-Hellman.html">Diffie-Hellman Key Generator</a>
+		<a href="#">Placeholder</a>
+	</nav>
+</header>
+
+<noscript><p><span class="warning"><em>Please enable JavaScript to use this page.</em></span></p></noscript>
+
+<h2 style="text-align: center;">Diffie-Hellman Key Generator</h2>
+<div class="dif-grid-container">
+	<div class="grid-item">
+		<!--G and x Value-->
+		<label>Party A</label>
+		<br>
+		<h3>Enter the value of G</h3>
+		<h4>(This is to be a prime number)</h4>
+		<input type="number" id="g"></input>
+		<!-- <textarea rows="1" cols="3" autofocus id="g"></textarea> -->
+		<br><br>
+		<h3>Enter the value of X</h3>
+		<h4>(This is party A's secret number)</h4>
+		<input type="number" id="x"></input>
+		<!-- <textarea rows="1" cols="3" autofocus id="x"></textarea> -->
+		<div id="bob1"></div>
+	</div>
+	<div class="grid-item" style="background-color: white;">
+		<!--Empty column-->
+		<button type="button" onclick="difhell()" id="generate_button">Generate Key</button>
+	</div>
+	<div class="grid-item">
+		<!--N and y Value-->
+		<label>Party B</label>
+		<br>
+		<h3>Enter the value of N</h3>
+		<h4>(This is to be a prime number)</h4>
+		<input type="number" id="n"></input>
+		<!-- <textarea rows="1" cols="3" autofocus id="n"></textarea> -->
+		<br><br>
+		<h3>Enter the value of Y</h3>
+		<h4>(This is party B's secret number)</h4>
+		<input type="number" id="y"></input>
+		<!-- <textarea rows="1" cols="3" autofocus id="y"></textarea> -->
+		<div id="alice1"></div>
+	</div>
+	<div class="grid-item">
+		<!--A's key-->
+		<label>Bob's Key:</label>
+		<div id="bob2"></div>
+		<h2>This should equal Party B's key</h2>
+	</div>
+	<div class="grid-item" style="background-color: white;">
+		<!--Empty column-->
+		<h1>==</h1>
+	</div>
+	<div class="grid-item">
+		<!--B's Key-->
+		<label>Party B's Key:</label>
+		<div id="alice2"></div>
+		<h2>This should equal Party A's key</h2>
+	</div>
+</div>
+</body>
+</html>
