@@ -26,7 +26,13 @@
 .head-container {
 	overflow: hidden;
 }
-
+body {
+	text-align: center;
+}
+footer {
+	background-color: #000;
+	color: white
+}
 h1 {
 	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 30px;
@@ -72,8 +78,16 @@ h4 {
 	grid-auto-rows: auto 30px auto;
 	text-align: center;
 }
+#blank {
+	background-color: #FFF;
+}
 .grid-item {
 	background-color: #E8E8E8;
+}
+.main-grid-container {
+	display: grid;
+	grid-template-columns: 200px auto 200px;
+	text-align: center;
 }
 .dif-grid-container {
 	display: grid;

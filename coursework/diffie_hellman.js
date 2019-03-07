@@ -12,10 +12,9 @@ function difhell()
 	var alice_calc1 = (g_value**y_value) % n_value;
 	document.getElementById("alice1").innerHTML = alice_calc1
 
-	var bob_calc2 = (alice_calc1**=x_value) % n_value;
+	var bob_calc2 = (alice_calc1**x_value) % n_value;
 	document.getElementById("bob2").innerHTML = bob_calc2;
 	
-	var alice_calc2 = (bob_calc1**=y_value) % n_value;
+	var alice_calc2 = (bob_calc1**y_value) % n_value;
 	document.getElementById("alice2").innerHTML = alice_calc2;
-	alert(bob_calc2)
 }
