@@ -7,22 +7,43 @@
 	<title>Caesar Origin</title>
 </head>
 <body>
-<header>
-	<nav class="top-nav">
-		<a href="index.html">Home</a>
-		<a href="caesar.html">Caesar Cipher</a>
-		<a class="active" href="caesar_origin.html">Caesar Origin</a>
-		<a href="Diffie-Hellman.html">Diffie-Hellman Key Generator</a>
-		<a href="#">Placeholder</a>
-	</nav>
-</header>
-<h2 style="text-align: center;">Click here to try out encrypting and decrypting messages: <br><a href="./caesar.html">Encrypt/Decrypt</a></h2>
+	<header>
+		<nav class="top-nav">
+			<a href="index.html">Home</a>
+			<a href="caesar.html">Caesar Cipher</a>
+			<a class="active" href="caesar_origin.html">Caesar Origin</a>
+			<a href="Diffie-Hellman.html">Diffie-Hellman Key Generator</a>
+			<a href="diffie-hellman-origin.html">Diffie-Hellman Origin</a>
+		</nav>
+	</header>
+	<h2 style="text-align: center;">Click here to try out encrypting and decrypting messages: <br><a href="./caesar.html">Encrypt/Decrypt</a></h2>
+	<br>
+	<p>
+		<h2>About the Caesar Cipher:</h2>
+		The Caesar cipher was named after Julius Caesar, whom was said to have used the cipher to a 3 letter shift<br>
+		to encrypt military messages to his generals. The following is a quote from Suetonius in the biography "Life of Julius Caesar".<br><br> <i>"If he had anything confidential to say, he wrote it in cipher, that is, by so changing the order of the letters of the alphabet,<br> that not a word could be made out. If anyone wishes to decipher these, and get at their meaning, he must substitute the fourth <br>letter of the alphabet, namely D, for A, and so with the others."</i><br>
+		<a href="https://en.wikipedia.org/wiki/The_Twelve_Caesars"><h3>Suetonius, Life of Julius Caesar</h3></a>
 
-<iframe src="https://en.wikipedia.org/wiki/Caesar_cipher" style="height: 500px; width: 1000px; object-fit: fill; border: none;"></iframe>
+		<h2>How it Works:</h2>
+		Plain:    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+		Cipher:   XYZABCDEFGHIJKLMNOPQRSTUVW<br>
+		<br>Here we see the plain alphabet, underneath is the alphabet shifted 23 times to the right (or 3 times to the left)<br>
+		With this, we can encrypt a message. If we wanted to encrypt the word "Hello" using this 23 letter shift we would find:
+		<br>H = E
+		<br>E = B
+		<br>L = I
+		<br>L = I
+		<br>O = L
+		<br>Therefore, our encrypted message would be "Ebiil"
+		<br><br>
+		To learn more about Caesar Ciphers <a href="https://en.wikipedia.org/wiki/Caesar_cipher">click here.</a>
+	</p>
+
+	<!-- <iframe src="https://en.wikipedia.org/wiki/Caesar_cipher" style="height: 500px; width: 1000px; object-fit: fill; border: none;"></iframe> -->
 
 	<footer>
 		<div class="student-info">
-			<h4 style="text-align: center;"><br>Paul Chalmers<br>40315122</h4><br>
+			<h4><br>Paul Chalmers<br>40315122</h4><br>
 		</div>
 	</footer>
 </body>

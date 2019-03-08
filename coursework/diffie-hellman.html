@@ -7,70 +7,67 @@
 	<title>Diffie-Hellman</title>
 </head>
 <body>
-<header>
-	<nav class="top-nav">
-		<a href="index.html">Home</a>
-		<a href="caesar.html">Caesar Cipher</a>
-		<a href="caesar_origin.html">Caesar Origin</a>
-		<a class="active" href="Diffie-Hellman.html">Diffie-Hellman Key Generator</a>
-		<a href="#">Placeholder</a>
-	</nav>
-</header>
+	<header>
+		<nav class="top-nav">
+			<a href="index.html">Home</a>
+			<a href="caesar.html">Caesar Cipher</a>
+			<a href="caesar_origin.html">Caesar Origin</a>
+			<a class="active" href="Diffie-Hellman.html">Diffie-Hellman Key Generator</a>
+			<a href="diffie-hellman-origin.html">Diffie-Hellman Origin</a>
+		</nav>
+	</header>
 
-<noscript><p><span class="warning"><em>Please enable JavaScript to use this page.</em></span></p></noscript>
+	<h2 style="text-align: center;">Click here to learn more about the Diffie-Hellman method: <br><a href="./diffie-hellman-origin.html">Learn More</a></h2><br>
+	<noscript><p><span class="warning"><em>Please enable JavaScript to use this page.</em></span></p></noscript>
 
-<h2 style="text-align: center;">Diffie-Hellman Key Generator</h2>
-<div class="dif-grid-container">
-	<div class="grid-item">
-		<!--G and x Value-->
-		<label>Party A</label>
-		<br>
-		<h3>Enter the value of G</h3>
-		<h4>(This is to be a prime number)</h4>
-		<input type="number" id="g"></input>
-		<!-- <textarea rows="1" cols="3" autofocus id="g"></textarea> -->
-		<br><br>
-		<h3>Enter the value of X</h3>
-		<h4>(This is party A's secret number)</h4>
-		<input type="number" id="x"></input>
-		<!-- <textarea rows="1" cols="3" autofocus id="x"></textarea> -->
-		<div id="bob1"></div>
-		<br>
-		<!--A's key-->
-		<label>Party A's Key:</label>
-		<div id="bob2"></div>
-		<br>
-		<h2>This should equal Party B's key</h2>
+	<h2>Diffie-Hellman Key Generator</h2>
+	<div class="dif-grid-container">
+		<div class="grid-item">
+			<!--G and x Value-->
+			<label>Party A</label>
+			<br>
+			<h3>Enter the value of G</h3>
+			<h4>(This is to be a prime number)</h4>
+			<input type="number" id="g"></input>
+			<br><br>
+			<h3>Enter the value of X</h3>
+			<h4>(This is party A's secret number)</h4>
+			<input type="number" id="x"></input>
+			<div id="bob1"></div>
+			<br>
+			<!--A's key-->
+			<label>Party A's Key:</label>
+			<div id="bob2"></div>
+			<br>
+			<h2>This should equal Party B's key</h2>
+		</div>
+		<div class="grid-item" style="background-color: white;">
+			<!--Empty column-->
+			<button type="button" onclick="difhell()" id="generate_button">Generate Key</button>
+		</div>
+		<div class="grid-item">
+			<!--N and y Value-->
+			<label>Party B</label>
+			<br>
+			<h3>Enter the value of N</h3>
+			<h4>(This is to be a prime number)</h4>
+			<input type="number" id="n"></input>
+			<br><br>
+			<h3>Enter the value of Y</h3>
+			<h4>(This is party B's secret number)</h4>
+			<input type="number" id="y"></input>
+			<div id="alice1"></div>
+			<br>
+			<!--B's Key-->
+			<label>Party B's Key:</label>
+			<div id="alice2"></div>
+			<br>
+			<h2>This should equal Party A's key</h2>
+		</div>
 	</div>
-	<div class="grid-item" style="background-color: white;">
-		<!--Empty column-->
-		<button type="button" onclick="difhell()" id="generate_button">Generate Key</button>
-	</div>
-	<div class="grid-item">
-		<!--N and y Value-->
-		<label>Party B</label>
-		<br>
-		<h3>Enter the value of N</h3>
-		<h4>(This is to be a prime number)</h4>
-		<input type="number" id="n"></input>
-		<!-- <textarea rows="1" cols="3" autofocus id="n"></textarea> -->
-		<br><br>
-		<h3>Enter the value of Y</h3>
-		<h4>(This is party B's secret number)</h4>
-		<input type="number" id="y"></input>
-		<!-- <textarea rows="1" cols="3" autofocus id="y"></textarea> -->
-		<div id="alice1"></div>
-		<br>
-		<!--B's Key-->
-		<label>Party B's Key:</label>
-		<div id="alice2"></div>
-		<br>
-		<h2>This should equal Party A's key</h2>
-	</div>
-</div>
 	<footer>
 		<div class="student-info">
-			<h4 style="text-align: center;"><br>Paul Chalmers<br>40315122</h4><br>
+			<h4><br>Paul Chalmers<br>40315122</h4><br>
 		</div>
 	</footer>
 </body>

@@ -7,110 +7,125 @@
 	<title>Caesar Cipher</title>
 </head>
 <body>
-<header>
-	<nav class="top-nav">
-		<a href="index.html">Home</a>
-		<a class="active" href="caesar.html">Caesar Cipher</a>
-		<a href="caesar_origin.html">Caesar Origin</a>
-		<a href="Diffie-Hellman.html">Diffie-Hellman Key Generator</a>
-		<a href="#">Placeholder</a>
-	</nav>
-</header>
-<h2 style="text-align: center;">Click here to read about the origin of the Caesar Cipher and how they work: <br><a href="./caesar_origin.html">Caesar Ciphers</a></h2>
+	<header>
+		<nav class="top-nav">
+			<a href="index.html">Home</a>
+			<a class="active" href="caesar.html">Caesar Cipher</a>
+			<a href="caesar_origin.html">Caesar Origin</a>
+			<a href="Diffie-Hellman.html">Diffie-Hellman Key Generator</a>
+			<a href="diffie-hellman-origin.html">Diffie-Hellman Origin</a>
+		</nav>
+	</header>
+	<h2 style="text-align: center;">Click here to read about the origin of the Caesar Cipher and how they work: <br><a href="./caesar_origin.html">Learn More</a></h2><br>
+	<h2>Caesar Cipher</h2>
+	<p>
+		A Caesar cipher is used to encrypt messages by shifting the alphabet a certain number of spaces.<br>
+		This can be shifted up to 25 times before repeating itself. This cipher is rarely used in the modern world<br>
+		however can still be found in more complex cipher suites such as the Vigenere Cipher.<br><br>
+		<h3>How to use it:</h3>
+		To use the Caesar cipher, you must first enter a word you wish you encrypt, for example "hello".<br>
+		Then select the number of shifts you with to use, for example 10 then hit "Encrypt".<br>
+		This will produce the output of "rovvy".<br><br>
+		To decrypt the message, type the encrypted message into the decrypt message box and select the correct shift<br>
+		then click "decrypt". This should produce the original message.
+	</p>
+	<!-- Information sourced from: https://en.wikipedia.org/wiki/Caesar_cipher
+	https://asecuritysite.com/encryption/caesar
+	notes from Network security and cryptography CSN09112 -->
+	<br>
+	<noscript><p><span class="warning"><em>Please enable JavaScript to use this page.</em></span></p></noscript>
 
-<noscript><p><span class="warning"><em>Please enable JavaScript to use this page.</em></span></p></noscript>
+	<div class="grid-container">
+		<div class="grid-item">
+			<h2>Caesar Encrypt</h2>
+			<div id="caesar-encrypt">
+				<label>Enter the Plain Text you wish to Encrypt below:</label><br>
+				<textarea rows="1" cols="50" autofocus id="message"></textarea>
+				<br>
+				<label>Enter the Number of Shifts you wish to Encrypt with:</label>
+				<br>
+				<p><select type="number" id="cshift" onchange="update()">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13" selected>13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+				</select></p>
+				<button type ="button" onclick="encrypt()" id="encrypt_button">Encrypt</button>
+			</div>
 
-<div class="grid-container">
-	<div class="grid-item">
-		<h2>Caesar Encrypt</h2>
-		<div id="caesar-encrypt">
-			<label>Enter the Plain Text you wish to Encrypt below:</label><br>
-			<textarea rows="1" cols="50" autofocus id="message"></textarea>
-			<br>
-			<label>Enter the Number of Shifts you wish to Encrypt with:</label>
-			<br>
-			<p><select type="number" id="cshift" onchange="update()">
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-			<option value="6">6</option>
-			<option value="7">7</option>
-			<option value="8">8</option>
-			<option value="9">9</option>
-			<option value="10">10</option>
-			<option value="11">11</option>
-			<option value="12">12</option>
-			<option value="13" selected>13</option>
-			<option value="14">14</option>
-			<option value="15">15</option>
-			<option value="16">16</option>
-			<option value="17">17</option>
-			<option value="18">18</option>
-			<option value="19">19</option>
-			<option value="20">20</option>
-			<option value="21">21</option>
-			<option value="22">22</option>
-			<option value="23">23</option>
-			<option value="24">24</option>
-			<option value="25">25</option>
-			</select></p>
-			<button type ="button" onclick="encrypt()" id="encrypt_button">Encrypt</button>
-		</div>
-
-		<div class="caesar-output">
-			<p>Encrypted Output:</p>
-			<div id="eoutput"></div>
-		</div>
+			<div class="caesar-output">
+				<p>Encrypted Output:</p>
+				<div id="eoutput"></div>
+			</div>
 		
-	</div>
-	<div class="grid-item" style="background-color: white;"></div>
-	<div class="grid-item">
-		<h2>Caesar Decrypt</h2>
-		<div id="caesar-decrypt">
-			<label>Enter the Cipher Text you wish to Decrypt below:</label><br>
-			<textarea rows="1" cols="50" autofocus id="ciphert"></textarea><br>
-			<label>Enter the Number of Shifts you wish to Decrypt with:</label><br>
-			<p><select type="number" id="dcshift" onchange="update()">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-				<option value="11">11</option>
-				<option value="12">12</option>
-				<option value="13" selected>13</option>
-				<option value="14">14</option>
-				<option value="15">15</option>
-				<option value="16">16</option>
-				<option value="17">17</option>
-				<option value="18">18</option>
-				<option value="19">19</option>
-				<option value="20">20</option>
-				<option value="21">21</option>
-				<option value="22">22</option>
-				<option value="23">23</option>
-				<option value="24">24</option>
-				<option value="25">25</option>
-			</select></p>
-			<button type ="button" onclick="decrypt()" id="decrypt_button">Decrypt</button>
 		</div>
+		<div class="grid-item" style="background-color: white;"></div>
+		<div class="grid-item">
+			<h2>Caesar Decrypt</h2>
+			<div id="caesar-decrypt">
+				<label>Enter the Cipher Text you wish to Decrypt below:</label><br>
+				<textarea rows="1" cols="50" autofocus id="ciphert"></textarea><br>
+				<label>Enter the Number of Shifts you wish to Decrypt with:</label><br>
+				<p><select type="number" id="dcshift" onchange="update()">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13" selected>13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+				</select></p>
+				<button type ="button" onclick="decrypt()" id="decrypt_button">Decrypt</button>
+			</div>
 
-		<div class="caesar-output">
-			<p>Decrypted Output:</p>
-			<div id="doutput"></div>
+			<div class="caesar-output">
+				<p>Decrypted Output:</p>
+				<div id="doutput"></div>
+			</div>
 		</div>
 	</div>
-</div>
 	<footer>
 		<div class="student-info">
-			<h4 style="text-align: center;"><br>Paul Chalmers<br>40315122</h4><br>
+			<h4><br>Paul Chalmers<br>40315122</h4><br>
 		</div>
 	</footer>
 </body>
