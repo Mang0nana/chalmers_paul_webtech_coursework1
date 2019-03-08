@@ -16,8 +16,10 @@
 			<a href="diffie-hellman-origin.html">Diffie-Hellman Origin</a>
 		</nav>
 	</header>
+	<!-- Link to caesar origin -->
 	<h2 style="text-align: center;">Click here to read about the origin of the Caesar Cipher and how they work: <br><a href="./caesar_origin.html">Learn More</a></h2><br>
 	<h2>Caesar Cipher</h2>
+	<!-- Brief explanation of Caesar code and an example -->
 	<p>
 		A Caesar cipher is used to encrypt messages by shifting the alphabet a certain number of spaces.<br>
 		This can be shifted up to 25 times before repeating itself. This cipher is rarely used in the modern world<br>
@@ -39,11 +41,13 @@
 		<div class="grid-item">
 			<h2>Caesar Encrypt</h2>
 			<div id="caesar-encrypt">
+				<!-- User enters text they with to encrypt -->
 				<label>Enter the Plain Text you wish to Encrypt below:</label><br>
 				<textarea rows="1" cols="50" autofocus id="message"></textarea>
 				<br>
 				<label>Enter the Number of Shifts you wish to Encrypt with:</label>
 				<br>
+				<!-- Options for Available Shifts -->
 				<p><select type="number" id="cshift" onchange="update()">
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -75,6 +79,7 @@
 			</div>
 
 			<div class="caesar-output">
+				<!-- Output from encryption -->
 				<p>Encrypted Output:</p>
 				<div id="eoutput"></div>
 			</div>
@@ -84,10 +89,12 @@
 		<div class="grid-item">
 			<h2>Caesar Decrypt</h2>
 			<div id="caesar-decrypt">
+				<!-- User enters cypher text they wish to decrypt -->
 				<label>Enter the Cipher Text you wish to Decrypt below:</label><br>
 				<textarea rows="1" cols="50" autofocus id="ciphert"></textarea><br>
 				<label>Enter the Number of Shifts you wish to Decrypt with:</label><br>
 				<p><select type="number" id="dcshift" onchange="update()">
+					<!-- Options for Available Shifts -->
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
@@ -118,6 +125,7 @@
 			</div>
 
 			<div class="caesar-output">
+				<!-- Output from Decryption -->
 				<p>Decrypted Output:</p>
 				<div id="doutput"></div>
 			</div>

@@ -25,9 +25,6 @@ function encrypt()
 
 }
 
-
-
-
 function decrypt()
 {
 var plain_text = document.getElementById("ciphert").value;
