@@ -61,6 +61,9 @@ h4 {
 	font-weight: normal;
 	margin: auto;
 }
+input {
+	text-align: center;
+}
 .student-info {
 	text-align: center;
 }

@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" text="text/css" href="index.css">
 	<script src="diffie_hellman.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
 	<title>Diffie-Hellman</title>
 </head>
 <body>
@@ -19,8 +19,23 @@
 
 	<h2 style="text-align: center;">Click here to learn more about the Diffie-Hellman method: <br><a href="./diffie-hellman-origin.html">Learn More</a></h2><br>
 	<noscript><p><span class="warning"><em>Please enable JavaScript to use this page.</em></span></p></noscript>
-
-	<h2>Diffie-Hellman Key Generator</h2>
+	<p>
+		<h2>Diffie-Hellman Key Generator</h2>
+		Diffie-Hellman is used to generate a private key, this key can be used to encrypt/decrypt messages being<br>
+		passed accross the internet. IT takes two prime numbers and two secret numbers and performs a calculation<br>
+		to generate two identical keys, one for each party to use when sending/reveiving data.<br>
+		<br>
+		<h3>How to use it:</h3>
+		To use the key generator, you must enter 4 number values, G and N should be prime numbers and X and Y can<br>
+		be any number at all then hit the "Generate Key" button.<br>
+		This this example:<br>
+		G = 5<br>
+		N = 23<br>
+		x = 6<br>
+		y = 12<br>
+		<br>
+		This should give you the end result of 8 as a key.
+	</p>
 	<div class="dif-grid-container">
 		<div class="grid-item">
 			<!--G and x Value-->
@@ -33,12 +48,13 @@
 			<h3>Enter the value of X</h3>
 			<h4>(This is party A's secret number)</h4>
 			<input type="number" id="x"></input>
-			<div id="bob1"></div>
-			<br>
+			<br><br>
+			<h3>First Calcualtion Result:</h3>
+			<div class="dhout" id="bob1"></div>
+			<br><br>
 			<!--A's key-->
 			<label>Party A's Key:</label>
-			<div id="bob2"></div>
-			<br>
+			<div class="dhout" id="bob2"></div>
 			<h2>This should equal Party B's key</h2>
 		</div>
 		<div class="grid-item" style="background-color: white;">
@@ -56,12 +72,13 @@
 			<h3>Enter the value of Y</h3>
 			<h4>(This is party B's secret number)</h4>
 			<input type="number" id="y"></input>
-			<div id="alice1"></div>
-			<br>
+			<br><br>
+			<h3>First Calcualtion Result:</h3>
+			<div class="dhout" id="alice1"></div>
+			<br><br>
 			<!--B's Key-->
 			<label>Party B's Key:</label>
-			<div id="alice2"></div>
-			<br>
+			<div class="dhout" id="alice2"></div>
 			<h2>This should equal Party A's key</h2>
 		</div>
 	</div>

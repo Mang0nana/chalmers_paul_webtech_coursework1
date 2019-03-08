@@ -1,46 +1,60 @@
-function get()
+function encrypt()
 {
-var input = document.getElementById("userInput");
-alert(input);
+  var plain_text = document.getElementById("message").value;
+  var shift = document.getElementById('cshift').value|0;
+  var cypher_text = [];
+  var alphabet =['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+  
+  for (idx=0; idx<plain_text.length; idx++)
+  {
+    input = alphabet.indexOf(plain_text[idx]);
+    if(input == -1)
+    {
+      cypher_text.push(plain_text[idx]);
+    }
+  
+    else
+    {
+      var coded = (input+shift)%26;
+      var letter = alphabet[coded];
+      cypher_text.push(letter);
+
+    }
+  }
+  document.getElementById("eoutput").innerHTML = cypher_text.join("");
+
 }
 
-var caesarShift = function(str, amount) {
 
-	// Wrap the amount
-	if (amount < 0)
-		return caesarShift(str, amount + 26);
 
-	// Make an output variable
-	var output = '';
 
-	// Go through each character
-	for (var i = 0; i < str.length; i ++) {
+function decrypt()
+{
+var plain_text = document.getElementById("ciphert").value;
+var shift = document.getElementById('dcshift').value|0;
+var cypher_text = [];
+var alphabet =['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];  
+  
+  for (idx=0; idx<plain_text.length; idx++)
+  {
+    input = alphabet.indexOf(plain_text[idx]);
+    if(input == -1)
+    {
+      cypher_text.push(plain_text[idx]);
+    }
+  
+    else
+    {
+      var dec = (26-shift);
+      var coded = (input+dec)%26;
+      var letter = alphabet[coded];
+      cypher_text.push(letter);
 
-		// Get the character we'll be appending
-		var c = str[i];
+    }
+  }
+  document.getElementById("doutput").innerHTML = cypher_text.join("");
+}
 
-		// If it's a letter...
-		if (c.match(/[a-z]/i)) {
-
-			// Get its code
-			var code = str.charCodeAt(i);
-
-			// Uppercase letters
-			if ((code >= 65) && (code <= 90))
-				c = String.fromCharCode(((code - 65 + amount) % 26) + 65);
-
-			// Lowercase letters
-			else if ((code >= 97) && (code <= 122))
-				c = String.fromCharCode(((code - 97 + amount) % 26) + 97);
-
-		}
-
-		// Append
-		output += c;
-
-	}
-
-	// All done!
-	return output;
-
-};
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}

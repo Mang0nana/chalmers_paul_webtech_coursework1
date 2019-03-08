@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<script type="text/javascript" src="rot.js"></script>
-	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
 	<title>Diffie-Hellman Origin</title>
 </head>
 <body>
@@ -20,10 +20,34 @@
 	<br>
 	<p>
 		<h2>About the Diffie-Hellman Method:</h2>
-		
-	</p>
-	<!-- <iframe src="https://en.wikipedia.org/wiki/Caesar_cipher" style="height: 500px; width: 1000px; object-fit: fill; border: none;"></iframe> -->
+		Diffie-Hellman is a method in which encryption keys are generated. Is is used in a scenarip where end-to-end encryption<br>
+		is required, during the creation of the key no information is passed over, only numbers. It is currently unbreakable due<br>
+		to the way the keys are generated which is explained below.
+		<br><br>
+		<h2>How it Works:</h2>
+		The two parties come up with two prime numbers, typically will be very large primes (the bigger the prime, the more secure)<br>
+		and these will be named G and N. Both parties then pick a secret number which can be anything, they keep this to themselves<br>
+		and don't share it with anyone, these will be names X and Y respectively. They both then perform the calculations below:<br><br>
+		<h2>Calculations:</h2>
+		Party A performs the calculation of G<sup>x</sup> mod N<br>
+		Party B performs the calculation of G<sup>y</sup> mod N<br>
+		<br>
+		They then pass eachother the results of this calculation and do the following:<br>
+		<br>
+		Party A performs the calculation of (Party B's result)<sup>x</sup> mod N<br>
+		Party B performs the calculation of (Party A's result)<sup>y</sup> mod N<br>
+		<br>
+		Party A's end result should equal Party B's end result<br>
+		And this end result then becomes the encryption key.<br>
+		<br>
+		This calculation can be represented by the following:<br>
+		(G<sup>x</sup> mod N)<sup>y</sup> mod N = G<sup>xy</sup> mod N<br>
+		(G<sup>y</sup> mod N)<sup>x</sup> mod N = G<sup>yx</sup> mod N<br>
+		<br>
+		No matter what way the exponentiation is represented you will always get the same answer.
 
+	</p>
+	<!-- Source used for information: https://security.stackexchange.com/questions/45963/diffie-hellman-key-exchange-in-plain-english -->
 	<footer>
 		<div class="student-info">
 			<h4><br>Paul Chalmers<br>40315122</h4><br>
