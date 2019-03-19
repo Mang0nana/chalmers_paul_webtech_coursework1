@@ -1,0 +1,107 @@
+.top-nav {
+  background-color: #000;
+  overflow: hidden;
+}
+
+.top-nav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+.top-nav a:hover {
+  background-color: #94618e;
+  color: black;
+}
+
+.top-nav a.active {
+  background-color: #813772;
+  color: white;
+}
+
+.head-container {
+	overflow: hidden;
+}
+body {
+	text-align: center;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 15px;
+	font-weight: normal;
+	margin: auto;
+}
+footer {
+	background-color: #000;
+	color: white
+}
+h1 {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 30px;
+	font-weight: normal;
+	margin-bottom: 0.1em;
+}
+h2, label {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 20px;
+	font-weight: normal;
+	margin: 1em auto 1em auto;*/
+}
+h3 {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 15px;
+	font-weight: normal;
+	margin: auto;
+}
+h4 {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	margin: auto;
+}
+input {
+	text-align: center;
+}
+.student-info {
+	text-align: center;
+}
+.caesar-output {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	margin: 1em auto 1em auto
+}
+.arrow {
+	font-size: 2.0em;
+	font-weight: bold;
+	margin: 0;
+}
+.warning {
+	background-color: orange;
+	padding: 0.4em 0.75em;
+}
+.grid-container {
+	display: grid;
+	grid-template-columns: auto 30px auto;
+	grid-auto-rows: auto 30px auto;
+	text-align: center;
+}
+#blank {
+	background-color: #FFF;
+}
+.grid-item {
+	background-color: #E8E8E8;
+}
+.main-grid-container {
+	display: grid;
+	grid-template-columns: 200px auto 200px;
+	text-align: center;
+}
+.dif-grid-container {
+	display: grid;
+	grid-template-columns: auto 120px auto;
+	grid-auto-rows: auto 30px auto;
+	text-align: center;
+}
